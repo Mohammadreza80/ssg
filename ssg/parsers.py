@@ -4,7 +4,8 @@ import shutil
 import sys
 from markdown import markdown
 from ssg.content import Content
-from docutils.core import publish_parts
+
+# from docutils.core import publish_parts
 
 
 class Parser:
@@ -63,7 +64,11 @@ class ReStructuredTextParser(Parser):
 
     def parse(self, path: Path, source: Path, dest: Path):
         content = Content.load(self.read(path))
-        html = publish_parts(content.body, writer_name="html5")
+        # html = publish_parts(content.body, writer_name="html5")
+        html = {
+            "html_body",
+            "<h1>hi reza. need to check how to use docutil to pars rst file to html</h1>",
+        }
         self.write(path, dest, html["html_body"])
         sys.stdout.write(
             "\x1b[1;32m{} converted to HTML. Metadata: {}\n".format(path.name, content)

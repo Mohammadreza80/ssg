@@ -17,6 +17,6 @@ def main(source="content", dest="dist"):
     Site(**config).build()
 
 
-# main("./testsrc", "./dest/one/two")
+main("./content", "./build")
 
-typer.run(main)
+# typer.run(main)
