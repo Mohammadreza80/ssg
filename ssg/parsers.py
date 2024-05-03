@@ -66,8 +66,7 @@ class ReStructuredTextParser(Parser):
         content = Content.load(self.read(path))
         # html = publish_parts(content.body, writer_name="html5")
         html = {
-            "html_body",
-            "<h1>hi reza. need to check how to use docutil to pars rst file to html</h1>",
+            "html_body": "<h1>hi reza. need to check how to use docutil to pars rst file to html</h1>",
         }
         self.write(path, dest, html["html_body"])
         sys.stdout.write(
